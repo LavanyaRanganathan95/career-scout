@@ -1,0 +1,7 @@
+# These URLs are fictional examples. Replace them with real public career pages.
+https://job-boards.greenhouse.io/acme-labs
+https://careers.smartrecruiters.com/AcmeBiotech
+https://acme.wd5.myworkdayjobs.com/en-US/Acme_Careers
+
+# This platform is not supported and will be listed separately.
+https://careers.example.org/open-roles

@@ -1,0 +1,8 @@
+{
+  "sources": [],
+  "_comment_keywords": "Run build_config.py with your own career-page URLs, then replace this empty list with terms relevant to your search. Matching is case-insensitive substring match against job titles.",
+  "keywords": [],
+  "keyword_filter_enabled": true,
+  "_comment_email": "Optional. Set to true only if you want Resend email delivery and have configured its GitHub secrets.",
+  "email_enabled": false
+}

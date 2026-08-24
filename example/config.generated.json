@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "name": "Acme Labs",
+      "type": "greenhouse",
+      "board_token": "acme-labs"
+    },
+    {
+      "name": "Acme Biotech",
+      "type": "smartrecruiters",
+      "company_id": "AcmeBiotech"
+    },
+    {
+      "name": "Acme",
+      "type": "workday",
+      "tenant": "acme",
+      "wd_host": "wd5",
+      "site": "Acme_Careers",
+      "public_base_url": "https://acme.wd5.myworkdayjobs.com/en-US/Acme_Careers"
+    }
+  ],
+  "_comment_keywords": "Auto-generated example keywords below — replace with terms relevant to your search. Matching is case-insensitive substring match against job titles.",
+  "keywords": [
+    "software engineer",
+    "data scientist",
+    "research scientist",
+    "product manager"
+  ],
+  "keyword_filter_enabled": true,
+  "email_enabled": false
+}

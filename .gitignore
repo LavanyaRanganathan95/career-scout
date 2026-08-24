@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Local secrets
+.env
+
+
+# Personal list created by build_config.py; do not publish it accidentally.
+unsupported_urls.txt
+.DS_Store

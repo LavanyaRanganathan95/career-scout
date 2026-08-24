@@ -1,0 +1,49 @@
+name: Daily Career Scout
+
+on:
+  schedule:
+    # Runs daily at 05:17 UTC. GitHub schedules may be delayed at minute 0.
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      test_email:
+        description: "Send a sample test email (requires email_enabled: true in config.json)"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write  # needed so the workflow can commit state.json / digest.txt back
+
+jobs:
+  run-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run job digest script
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_EMAIL_TO: ${{ secrets.DIGEST_EMAIL_TO }}
+          DIGEST_EMAIL_FROM: ${{ secrets.DIGEST_EMAIL_FROM }}
+        run: |
+          if [ "${{ inputs.test_email }}" = "true" ]; then
+            python fetch_jobs.py --test-email
+          else
+            python fetch_jobs.py
+          fi
+
+      - name: Commit updated state
+        if: ${{ inputs.test_email != 'true' }}
+        run: |
+          git config user.name "career-scout-bot"
+          git config user.email "actions@github.com"
+          git add state.json digest.txt digest.html output/
+          git diff --cached --quiet || git commit -m "Update Career Scout state [skip ci]"
+          git push
