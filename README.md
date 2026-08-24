@@ -194,6 +194,11 @@ career pages have this built in, even if this tool can't watch it for you.
   entries), so you don't get a flood of "new" postings that were actually
   already live before you started tracking.
 
+## Feedback
+
+Have an idea, found a bug, or ran into a confusing setup step? Please share
+your feedback in the [Issues](../../issues) tab.
+
 ## License
 
 MIT — use, modify, and share freely.
